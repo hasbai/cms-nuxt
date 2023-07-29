@@ -1,0 +1,31 @@
+.btn-icon {
+    @apply cursor-pointer hover:text-teal-500
+}
+
+.btn-fixed {
+    @apply fixed bottom-8 right-8 btn btn-lg btn-circle
+}
+
+@media (max-width: 768px) {
+    html::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    html::-webkit-scrollbar-track {
+        background: #f3f3f3;
+        border-radius: 2px;
+    }
+
+    html::-webkit-scrollbar-thumb {
+        background: rgb(210, 210, 210);
+        border-radius: 8px;
+    }
+
+    html::-webkit-scrollbar-thumb:hover {
+        background: rgb(180, 180, 180);
+    }
+
+    html::-webkit-scrollbar-corner {
+        background: #179a16;
+    }
+}

@@ -1,0 +1,50 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@headlessui/vue": "^1.7.15",
+    "@iconify-prerendered/vue-bx": "^0.23.1663655035",
+    "@iconify-prerendered/vue-gridicons": "^0.23.1679034056",
+    "@pinia-plugin-persistedstate/nuxt": "^1.1.1",
+    "@tiptap/extension-typography": "^2.0.4",
+    "@types/node": "^18.15.5",
+    "autoprefixer": "^10.4.14",
+    "daisyui": "^3.3.1",
+    "nuxt": "^3.3.1",
+    "nuxt-icon": "^0.4.2",
+    "postcss": "^8.4.27",
+    "tiptap-markdown": "^0.8.2"
+  },
+  "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@pinia/nuxt": "^0.4.7",
+    "@tailwindcss/typography": "^0.5.9",
+    "@tiptap/extension-bubble-menu": "^2.0.4",
+    "@tiptap/extension-character-count": "^2.0.4",
+    "@tiptap/extension-code": "^2.0.4",
+    "@tiptap/extension-code-block-lowlight": "^2.0.4",
+    "@tiptap/extension-document": "^2.0.4",
+    "@tiptap/extension-heading": "^2.0.4",
+    "@tiptap/extension-highlight": "^2.0.4",
+    "@tiptap/extension-image": "^2.0.4",
+    "@tiptap/extension-link": "^2.0.4",
+    "@tiptap/extension-placeholder": "^2.0.4",
+    "@tiptap/extension-text-align": "^2.0.4",
+    "@tiptap/extension-underline": "^2.0.4",
+    "@tiptap/extension-youtube": "^2.0.4",
+    "@tiptap/pm": "^2.0.4",
+    "@tiptap/starter-kit": "^2.0.4",
+    "@tiptap/vue-3": "^2.0.4",
+    "@types/markdown-it": "^12.2.3",
+    "highlight.js": "^11.8.0",
+    "markdown-it": "^13.0.1",
+    "pinia": "^2.0.33"
+  }
+}
