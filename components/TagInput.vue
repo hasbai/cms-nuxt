@@ -2,7 +2,7 @@
   <div class="tag-input">
     <div class="flex flex-wrap items-center mb-2">
       <TagBadge class="mx-0.5 my-0.5 cursor-pointer" @click.stop="select(tag, true)"
-                v-for="tag in selectedTags" :key="tag.id" :tag="tag"/>
+                v-for="tag in selectedTags" :key="tag.id" :tag="tag" cnt/>
       <button class="btn btn-xs" @click.stop="showInputCallback">
         Add Tag
       </button>
@@ -27,7 +27,7 @@
                 :key="tag.id"
             >
               <div @click.stop="select(tag)" class="cursor-pointer w-full">
-                <TagBadge :tag="tag"/>
+                <TagBadge :tag="tag" cnt/>
               </div>
             </li>
           </TransitionGroup>
