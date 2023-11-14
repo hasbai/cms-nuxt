@@ -1,7 +1,8 @@
 export class Content {
   constructor(
     public id?: number,
-    public author = '',
+    public authors?: Author,
+    public author_id?: number,
     public title = '',
     public description = '',
     public text = '',
@@ -10,6 +11,15 @@ export class Content {
     public updated_at?: string,
     // @ts-ignore
     public is_public = false) {
+  }
+}
+
+export class Author {
+  constructor(
+    public id?: number,
+    public name = '',
+    public email = '',
+  ) {
   }
 }
 

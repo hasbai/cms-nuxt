@@ -2,8 +2,8 @@
     @apply cursor-pointer hover:text-teal-500
 }
 
-.btn-fixed {
-    @apply fixed bottom-8 right-8 btn btn-lg btn-circle
+.fix {
+    @apply fixed bottom-8 right-10
 }
 
 @media (max-width: 768px) {

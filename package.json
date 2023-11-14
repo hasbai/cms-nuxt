@@ -13,6 +13,7 @@
     "@iconify-prerendered/vue-gridicons": "^0.23.1679034056",
     "@pinia-plugin-persistedstate/nuxt": "^1.1.1",
     "@tiptap/extension-typography": "^2.0.4",
+    "@types/md5": "^2.3.2",
     "@types/node": "^18.15.5",
     "autoprefixer": "^10.4.14",
     "daisyui": "^3.3.1",
@@ -45,6 +46,7 @@
     "@types/markdown-it": "^12.2.3",
     "highlight.js": "^11.8.0",
     "markdown-it": "^13.0.1",
+    "md5": "^2.3.0",
     "pinia": "^2.0.33"
   }
 }

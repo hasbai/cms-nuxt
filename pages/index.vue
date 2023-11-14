@@ -7,11 +7,11 @@
           :content="content"
       />
     </transition-group>
-    <!--        <nuxt-link to="/edit">-->
-    <!--          <v-btn class="fixed-btn" icon size="large">-->
-    <!--            <mdi-pencil-outline/>-->
-    <!--          </v-btn>-->
-    <!--        </nuxt-link>-->
+    <nuxt-link to="/edit">
+      <button class="fix btn btn-lg btn-circle btn-primary">
+        <Icon name="ic:baseline-edit" size="1.5rem"/>
+      </button>
+    </nuxt-link>
   </main>
 </template>
 

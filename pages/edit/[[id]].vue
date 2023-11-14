@@ -2,7 +2,7 @@
   <div class="drawer drawer-end relative">
     <input id="editor-drawer" type="checkbox" class="drawer-toggle"/>
     <label for="editor-drawer"
-           class="drawer-button fixed z-10 bottom-8 right-8 btn btn-lg btn-circle btn-primary">
+           class="drawer-button fix z-10 btn btn-lg btn-circle btn-primary">
       <Icon name="fa:send" size="1.5rem"/>
     </label>
     <main class="drawer-content pb-96">
@@ -40,7 +40,7 @@
         </div>
         <div>
           <label class="label">Author</label>
-          <input type="text" v-model="content.author" class="input w-full"/>
+          <AuthorInput v-model="content.authors"/>
         </div>
         <div>
           <label class="label">Created At</label>
@@ -65,6 +65,7 @@
 <script lang="ts" setup>
 import {$myFetch, getSingle, myFetch, returnSingle} from "@/composables/myFetch";
 import {Content, Tag} from "@/models";
+import AuthorInput from "@/components/AuthorInput.vue";
 
 const route = useRoute();
 let content = reactive(new Content())
@@ -73,7 +74,7 @@ if (route.params.id) {
     headers: getSingle,
     query: {
       id: `eq.${route.params.id}`,
-      select: '*,tags(*)'
+      select: '*,tags(*),authors(*)'
     }
   })
   Object.assign(content, data.value)
@@ -101,6 +102,8 @@ const updateDoc = async () => {
   const tags = content.tags || []
   delete content.id
   delete content.tags
+  if (content.authors) content.author_id = content.authors.id
+  delete content.authors
   // upsert content
   if (isNew) {
     const data = await $myFetch<Content>(`/contents`, {

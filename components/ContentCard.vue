@@ -71,12 +71,12 @@ async function deleteContent() {
   const timer = setInterval(() => {
     translateX.value += 1
   }, 10)
-  await store.deleteContent(content.id)
+  await store.deleteContent(content.id!)
   clearInterval(timer)
 }
 
 async function archiveContent() {
-  await store.archiveContent(content.id)
+  await store.archiveContent(content.id!)
   translateX.value = 0
 }
 
