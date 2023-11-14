@@ -1,5 +1,15 @@
 export const myFetch: typeof useFetch = (request, opts?) => {
-  return useFetch(request, {baseURL: '/api', ...opts})
+  return useFetch(request, {
+    baseURL: '/api',
+    onRequest({request, options}) {
+      // @ts-ignore
+      if (options.headers['x-forwarded-proto']) {
+        // @ts-ignore
+        options.headers['x-forwarded-proto'] = 'https'
+      }
+    },
+    ...opts,
+  })
 }
 
 export const $myFetch = $fetch.create({

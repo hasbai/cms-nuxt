@@ -27,8 +27,8 @@ const store = mainStore()
 //   console.log('mounted', store.contents)
 // })
 
-const {data} = await myFetch('/contents?order=id.desc')
-store.contents = toRaw(data.value) as Content[]
+const {data} = await myFetch<Content[]>('/contents?order=id.desc')
+store.contents = data.value!
 
 </script>
 
