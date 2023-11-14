@@ -18,7 +18,11 @@
 <script lang="ts" setup>
 import {mainStore} from "@/utils/store";
 import {myFetch} from "@/composables/myFetch";
-import {Content} from "@/models";
+import {type Content} from "@/models";
+
+definePageMeta({
+  keepalive: true
+})
 
 const store = mainStore()
 // onMounted(() => {

@@ -27,15 +27,10 @@
 </template>
 
 <script setup lang="ts">
-import {Author} from "@/models";
+import type {Author} from "@/models";
 
 const emit = defineEmits(["update:modelValue"])
-const {modelValue} = defineProps({
-  modelValue: {
-    type: Author,
-    required: true,
-  }
-});
+const {modelValue} = defineProps<{ modelValue: Author }>();
 
 const authors = await $myFetch<Author[]>("/authors");
 

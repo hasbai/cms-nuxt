@@ -1,4 +1,4 @@
-import {Content} from '@/models'
+import {type Content} from '@/models'
 
 export const configStore = defineStore('config', {
   state: () => {
@@ -12,11 +12,9 @@ export const configStore = defineStore('config', {
 
 export const mainStore = defineStore('main', () => {
   let showMenu = false
-  let draft = new Content()
   let contents = new Array<Content>()
   return {
     showMenu,
-    draft,
     contents,
   }
 })

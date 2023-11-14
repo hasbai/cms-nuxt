@@ -38,20 +38,14 @@
 </template>
 
 <script setup lang="ts">
-import {Tag} from "@/models";
+import {type Tag} from "@/models";
 import TagBadge from "@/components/TagBadge.vue";
 import {returnSingle} from "@/composables/myFetch";
 
-const {data} = await myFetch('/tags')
-const tags = reactive(data.value as Tag[])
+const tags = await $myFetch<Tag[]>('/tags')
 
 const emit = defineEmits(["update:modelValue"])
-const {modelValue} = defineProps({
-  modelValue: {
-    type: Array<Tag>,
-    required: true,
-  }
-});
+const {modelValue} = defineProps<{ modelValue: Tag[] }>();
 const selectedTags = reactive(new Set(modelValue))
 const selected = (tag: Tag) => selectedTags.has(tag)
 const select = (tag: Tag, del = false) => {

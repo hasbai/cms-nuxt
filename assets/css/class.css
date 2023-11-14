@@ -6,6 +6,10 @@
     @apply fixed bottom-8 right-10
 }
 
+.prose {
+    @apply max-w-full
+}
+
 @media (max-width: 768px) {
     html::-webkit-scrollbar {
         width: 6px;

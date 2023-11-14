@@ -1,36 +1,39 @@
-export class Content {
-  constructor(
-    public id?: number,
-    public authors?: Author,
-    public author_id?: number,
-    public title = '',
-    public description = '',
-    public text = '',
-    public tags?: Array<Tag>,
-    public created_at = new Date().toISOString(),
-    public updated_at?: string,
-    // @ts-ignore
-    public is_public = false) {
-  }
+export interface Content {
+  id?: number;
+  title: string;
+  description?: string;
+  text?: string;
+  created_at: string;
+  updated_at?: string;
+  author_id?: number;
+  is_public: boolean;
+  tags?: Tag[];
+  authors?: Author;
 }
 
-export class Author {
-  constructor(
-    public id?: number,
-    public name = '',
-    public email = '',
-  ) {
-  }
+export interface Tag {
+  id: number;
+  name: string;
+  cnt: number;
 }
 
-export class Tag {
-  public id: number
-  public name: string
-  public cnt: number
+export interface Author {
+  id?: number,
+  name: string,
+  email: string
+}
 
-  constructor(source: any = {}) {
-    this.id = source.id
-    this.name = source.name || ''
-    this.cnt = source.cnt
-  }
+export const newContent = () => {
+  return {
+    title: '',
+    description: '',
+    text: '',
+    created_at: new Date().toISOString(),
+    is_public: false,
+    tags: [],
+    authors: {
+      name: '',
+      email: ''
+    }
+  } as Content
 }

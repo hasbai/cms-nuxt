@@ -2,10 +2,10 @@
   <div class="flex flex-row my-6 w-full">
     <div class="date mr-4">
       <div class="day">
-        {{ cratedAt.substring(8, 10) }}
+        {{ content.created_at.substring(8, 10) }}
       </div>
       <div class="small">
-        {{ cratedAt.substring(5, 7) }}/{{ cratedAt.substring(2, 4) }}
+        {{ content.created_at.substring(5, 7) }}/{{ content.created_at.substring(2, 4) }}
       </div>
     </div>
     <div class="content-container relative flex flex-1">
@@ -31,12 +31,11 @@
 </template>
 
 <script lang="ts" setup>
-import {Content} from '@/models'
+import {type Content} from '@/models'
 import {computed} from "vue";
 import {mainStore} from "@/utils/store";
 
 const {content} = defineProps<{ content: Content }>()
-const cratedAt = new Date(content.created_at).toISOString()
 
 const translateX = ref(0)
 let startX = 0
@@ -71,12 +70,12 @@ async function deleteContent() {
   const timer = setInterval(() => {
     translateX.value += 1
   }, 10)
-  await store.deleteContent(content.id!)
+  // await store.deleteContent(content.id!)
   clearInterval(timer)
 }
 
 async function archiveContent() {
-  await store.archiveContent(content.id!)
+  // await store.archiveContent(content.id!)
   translateX.value = 0
 }
 

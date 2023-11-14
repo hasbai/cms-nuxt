@@ -1,5 +1,5 @@
 <template>
-  <div v-if="editor" class="flex flex-col w-full max-w-xl min-h-half sm:rounded-lg">
+  <div v-if="editor" class="flex flex-col w-full min-h-half sm:rounded-lg">
     <div
         class="sticky top-0 z-10 flex justify-between text-neutral-500 focus:outline-none
         toolbar pt-4 pb-6 text-2xl"

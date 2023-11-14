@@ -18,10 +18,10 @@
 
 
 <script setup lang="ts">
-import {Author} from "@/models";
+import type {Author} from "@/models";
 import md5 from 'md5'
 
-const {author} = defineProps({author: {type: Author, required: true}})
+const {author} = defineProps<{ author: Author }>()
 const gravatar = computed(() => `https://www.gravatar.com/avatar/${md5(author.email)}?d=404`)
 
 const success = ref(true)

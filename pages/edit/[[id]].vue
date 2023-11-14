@@ -64,11 +64,15 @@
 
 <script lang="ts" setup>
 import {$myFetch, getSingle, myFetch, returnSingle} from "@/composables/myFetch";
-import {Content, Tag} from "@/models";
+import {type Content, newContent, type Tag} from "@/models";
 import AuthorInput from "@/components/AuthorInput.vue";
 
+definePageMeta({
+  name: "edit",
+})
+
 const route = useRoute();
-let content = reactive(new Content())
+let content = reactive(newContent())
 if (route.params.id) {
   const {data} = await myFetch<Content>(`/contents`, {
     headers: getSingle,
@@ -77,12 +81,8 @@ if (route.params.id) {
       select: '*,tags(*),authors(*)'
     }
   })
-  Object.assign(content, data.value)
+  Object.assign(content, toRaw(data.value))
 }
-
-definePageMeta({
-  name: "edit",
-});
 
 useHead({
   title: `Edit ${content.title}`,

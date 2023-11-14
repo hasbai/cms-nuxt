@@ -18,8 +18,12 @@ import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
 import {getSingle, myFetch} from "@/composables/myFetch";
-import {Content} from "@/models";
+import {type Content} from "@/models";
 import TagBadge from "@/components/TagBadge.vue";
+
+definePageMeta({
+  keepalive: true
+})
 
 let md: any = new MarkdownIt({
   html: true,

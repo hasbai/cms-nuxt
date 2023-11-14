@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import {Tag} from "@/models";
+import {type Tag} from "@/models";
 
 const {tag} = defineProps<{ tag: Tag }>()
 </script>
