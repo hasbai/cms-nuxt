@@ -126,6 +126,8 @@ import CharacterCount from "@tiptap/extension-character-count";
 import {BubbleMenu, EditorContent, useEditor} from "@tiptap/vue-3";
 import {Markdown} from 'tiptap-markdown';
 import {Typography} from "@tiptap/extension-typography";
+import {Mathematics} from "@tiptap-pro/extension-mathematics";
+import 'katex/dist/katex.min.css'
 
 const props = defineProps(["modelValue"]);
 const emit = defineEmits(["update:modelValue"]);
@@ -172,6 +174,7 @@ const editor = useEditor({
     Typography,
     WordCount,
     Youtube,
+    Mathematics,
     Placeholder.configure({
       emptyEditorClass: "is-editor-empty",
       placeholder: ({node}) => {
@@ -243,6 +246,30 @@ const addLink = (url) => {
 <style>
 .ProseMirror {
   min-height: 50vh;
+}
+
+.Tiptap-mathematics-editor {
+  font-family: var(--font-mono);
+  padding: 0.25rem;
+}
+
+.Tiptap-mathematics-render {
+  padding: 0 0.25rem;
+
+  &--editable {
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #eee;
+    }
+  }
+}
+
+.Tiptap-mathematics-editor,
+.Tiptap-mathematics-render {
+  border-radius: 0.25rem;
+  display: inline-block;
 }
 
 .toolbar {

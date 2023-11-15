@@ -20,6 +20,9 @@ import 'highlight.js/styles/atom-one-dark.css'
 import {getSingle, myFetch} from "@/composables/myFetch";
 import {type Content} from "@/models";
 import TagBadge from "@/components/TagBadge.vue";
+// @ts-ignore
+import mk from '@iktakahiro/markdown-it-katex'
+import 'katex/dist/katex.min.css'
 
 definePageMeta({
   keepalive: true
@@ -43,6 +46,8 @@ let md: any = new MarkdownIt({
     return '<pre><code class="language-none hljs">' + md.utils.escapeHtml(str) + '</code></pre>';
   }
 })
+md.use(mk)
+
 const route = useRoute()
 const {data} = await myFetch<Content>(`/contents`, {
   headers: getSingle,

@@ -66,6 +66,7 @@
 import {$myFetch, getSingle, myFetch, returnSingle} from "@/composables/myFetch";
 import {type Content, newContent, type Tag} from "@/models";
 import AuthorInput from "@/components/AuthorInput.vue";
+import TipTap from "@/components/editor/TipTap.vue";
 
 definePageMeta({
   name: "edit",

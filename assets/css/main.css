@@ -1,5 +1,6 @@
 @import url(class.css);
 @import url(transition.css);
+@import url(font.css);
 
 h1 {
     @apply text-2xl font-bold my-4 text-center;

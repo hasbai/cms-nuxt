@@ -24,9 +24,11 @@
   },
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
+    "@iktakahiro/markdown-it-katex": "^4.0.1",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@pinia/nuxt": "^0.4.7",
     "@tailwindcss/typography": "^0.5.9",
+    "@tiptap-pro/extension-mathematics": "^2.3.3",
     "@tiptap/extension-bubble-menu": "^2.0.4",
     "@tiptap/extension-character-count": "^2.0.4",
     "@tiptap/extension-code": "^2.0.4",
@@ -45,6 +47,7 @@
     "@tiptap/vue-3": "^2.0.4",
     "@types/markdown-it": "^12.2.3",
     "highlight.js": "^11.8.0",
+    "katex": "^0.16.9",
     "markdown-it": "^13.0.1",
     "md5": "^2.3.0",
     "pinia": "^2.0.33"
