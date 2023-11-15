@@ -128,6 +128,7 @@ import {Markdown} from 'tiptap-markdown';
 import {Typography} from "@tiptap/extension-typography";
 import {Mathematics} from "@tiptap-pro/extension-mathematics";
 import 'katex/dist/katex.min.css'
+import {unescape} from "@/components/editor/utils";
 
 const props = defineProps(["modelValue"]);
 const emit = defineEmits(["update:modelValue"]);
@@ -191,7 +192,7 @@ const editor = useEditor({
   content: props.modelValue,
   autofocus: true,
   onUpdate: ({editor}) => {
-    emit("update:modelValue", editor.storage.markdown.getMarkdown());
+    emit("update:modelValue", unescape(editor.storage.markdown.getMarkdown()));
   },
 });
 
