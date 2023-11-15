@@ -2,3 +2,18 @@
     --font-serif: 'Noto Serif SC', serif;
     --font-mono: Consolas, monospace, serif;
 }
+
+h1 {
+    font-size: xx-large;
+    font-weight: bold;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+article {
+    font-family: var(--font-serif);
+}
+
+article p {
+    font-size: large;
+}

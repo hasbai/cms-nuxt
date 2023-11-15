@@ -64,7 +64,7 @@
       </div>
     </div>
 
-    <div class="editor flex-1 w-full h-full overflow-y-auto">
+    <article class="editor flex-1 w-full h-full overflow-y-auto">
       <editor-content :editor="editor" class="h-full"/>
       <!-- add link -->
       <div
@@ -94,7 +94,7 @@
           </label>
         </div>
       </div>
-    </div>
+    </article>
 
     <div class="relative">
       <bubble-menu
@@ -186,7 +186,7 @@ const editor = useEditor({
   editorProps: {
     attributes: {
       class:
-          "prose sm:prose-lg lg:prose-xl focus:outline-none dark:bg-stone-800",
+          "prose focus:outline-none dark:bg-stone-800",
     },
   },
   content: props.modelValue,
