@@ -122,13 +122,12 @@ import Placeholder from "@tiptap/extension-placeholder";
 import Image from "@tiptap/extension-image";
 import Highlight from "@tiptap/extension-highlight";
 import Youtube from "@tiptap/extension-youtube";
-import CharacterCount from "@tiptap/extension-character-count";
 import {BubbleMenu, EditorContent, useEditor} from "@tiptap/vue-3";
-import {Markdown} from 'tiptap-markdown';
+import {WordCount} from "@/components/editor/utils";
+import {Markdown} from '@hasbai/tiptap-markdown';
 import {Typography} from "@tiptap/extension-typography";
 import {Mathematics} from "@tiptap-pro/extension-mathematics";
 import 'katex/dist/katex.min.css'
-import {unescape} from "@/components/editor/utils";
 
 const props = defineProps(["modelValue"]);
 const emit = defineEmits(["update:modelValue"]);
@@ -141,36 +140,13 @@ const vFocus = {
   mounted: (el) => el.focus(),
 };
 
-const WordCount = CharacterCount.extend({
-  onBeforeCreate() {
-    this.storage.characters = options => {
-      // use words only, for better performance
-      return 0
-    }
-
-    this.storage.words = options => {
-      const node = options?.node || this.editor.state.doc
-      const text = node.textBetween(0, node.content.size, ' ', ' ')
-      const cn = text.match(/\p{sc=Han}/gu) || '';
-      const en = text.replace(/[^\w-]/g, ' ').split(/\s+/).filter(w => {
-        return ['', '-', '_'].indexOf(w.trim()) === -1
-      })
-      return cn.length + en.length
-    }
-  },
-});
-
 const editor = useEditor({
   extensions: [
     StarterKit,
     Markdown,
     Image,
-    Link.configure({
-      openOnClick: false,
-    }),
-    TextAlign.configure({
-      types: ["heading", "paragraph"],
-    }),
+    Link.configure({openOnClick: false}),
+    TextAlign.configure({types: ["heading", "paragraph"]}),
     Highlight,
     Typography,
     WordCount,
@@ -192,7 +168,7 @@ const editor = useEditor({
   content: props.modelValue,
   autofocus: true,
   onUpdate: ({editor}) => {
-    emit("update:modelValue", unescape(editor.storage.markdown.getMarkdown()));
+    emit("update:modelValue", editor.storage.markdown.getMarkdown())
   },
 });
 

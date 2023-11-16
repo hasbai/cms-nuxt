@@ -658,6 +658,16 @@
   resolved "https://registry.yarnpkg.com/@fastify/busboy/-/busboy-2.1.0.tgz#0709e9f4cb252351c609c6e6d8d6779a8d25edff"
   integrity sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==
 
+"@hasbai/tiptap-markdown@^0.8.5":
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/@hasbai/tiptap-markdown/-/tiptap-markdown-0.8.5.tgz#6264547d10b33db5a75593fe377bfc5b2625366c"
+  integrity sha512-y7vvCX7Y+M7splCee2MYIx7kr//c6ipO6taiQz9dHeaSvxVPqK0FgINR8w89njtxjSVu1eFKO6OC0GXy7I71Rw==
+  dependencies:
+    "@types/markdown-it" "^12.2.3"
+    markdown-it "^13.0.1"
+    markdown-it-task-lists "^2.1.1"
+    prosemirror-markdown "^1.11.1"
+
 "@headlessui/vue@^1.7.15":
   version "1.7.15"
   resolved "https://registry.yarnpkg.com/@headlessui/vue/-/vue-1.7.15.tgz#82e25e1649c7687f93c5d50af98ba65bd25be721"
@@ -6013,10 +6023,18 @@ prosemirror-keymap@^1.0.0, prosemirror-keymap@^1.1.2, prosemirror-keymap@^1.2.0:
     prosemirror-state "^1.0.0"
     w3c-keyname "^2.2.0"
 
-prosemirror-markdown@^1.10.1, prosemirror-markdown@^1.11.1:
+prosemirror-markdown@^1.10.1:
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/prosemirror-markdown/-/prosemirror-markdown-1.11.1.tgz#441ad0ac4ab7c30f50623517e65c6bb8e966e9e3"
   integrity sha512-CLOieKoaSSEusKyYcXIj8v2qHGLW+tnuffci+8678Sen48NEFQE7M3o0Nx0gj9v63iVDj+yLibj2gCe8eb3jIw==
+  dependencies:
+    markdown-it "^13.0.1"
+    prosemirror-model "^1.0.0"
+
+prosemirror-markdown@^1.11.1:
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/prosemirror-markdown/-/prosemirror-markdown-1.11.2.tgz#f6e529e669d11fa3eec859e93c0d2c91788d6c80"
+  integrity sha512-Eu5g4WPiCdqDTGhdSsG9N6ZjACQRYrsAkrF9KYfdMaCmjIApH75aVncsWYOJvEk2i1B3i8jZppv3J/tnuHGiUQ==
   dependencies:
     markdown-it "^13.0.1"
     prosemirror-model "^1.0.0"
@@ -6849,16 +6867,6 @@ tippy.js@^6.3.7:
   integrity sha512-E1d3oP2emgJ9dRQZdf3Kkn0qJgI6ZLpyS5z6ZkY1DF3kaQaBsGZsndEpHwx+eC+tYM41HaSNvNtLx8tU57FzTQ==
   dependencies:
     "@popperjs/core" "^2.9.0"
-
-tiptap-markdown@^0.8.2:
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/tiptap-markdown/-/tiptap-markdown-0.8.2.tgz#93d42ef6225042d8bfe77861b93450aab184d67b"
-  integrity sha512-RyfpnH475+FYVh1fCiWF9+wBvA8T6X3PqxZR1MApEewxkoQ5kREQFiVwjZiez9qUQk/Bxu3RerFSJot65V6cbQ==
-  dependencies:
-    "@types/markdown-it" "^12.2.3"
-    markdown-it "^13.0.1"
-    markdown-it-task-lists "^2.1.1"
-    prosemirror-markdown "^1.11.1"
 
 titleize@^3.0.0:
   version "3.0.0"
