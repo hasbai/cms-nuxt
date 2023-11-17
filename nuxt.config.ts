@@ -17,7 +17,7 @@ export default defineNuxtConfig({
         {rel: 'preconnect', href: 'https://fonts.googleapis.com', crossorigin: 'anonymous'},
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&display=swap'
+          href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Noto+Serif+SC:wght@500;700&display=swap'
         }
       ],
       style: []

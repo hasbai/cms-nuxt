@@ -1,6 +1,11 @@
 :root {
-    --font-serif: 'Noto Serif SC', serif;
+    --font-sans: 'Noto Sans SC', sans-serif;
+    --font-serif: 'Noto Serif SC', 'Times New Roman', serif;
     --font-mono: Consolas, monospace, serif;
+}
+
+html {
+    font-family: var(--font-sans);
 }
 
 h1 {
