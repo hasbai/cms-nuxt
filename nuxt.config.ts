@@ -42,18 +42,9 @@ export default defineNuxtConfig({
       'defineStore', // automatically imports `defineStore`
     ]
   },
-  nitro: {
-    devProxy: {
-      '/api': {
-        target: process.env.BASE_URL || '',
-        changeOrigin: true,
-      },
+  routeRules: {
+    '/api/**': {
+      proxy: `${process.env.BASE_URL}/api/**`,
     },
-    routeRules: {
-      '/api/**': {
-        proxy: `${process.env.BASE_URL || ''}/**`
-      }
-    }
   },
-
 })
